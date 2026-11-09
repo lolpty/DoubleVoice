@@ -1,0 +1,56 @@
+[
+  {
+    "api": "org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT",
+    "target": "spigot-1.16.5",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT",
+    "target": "spigot-1.17.1",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT",
+    "target": "spigot-1.18.2",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT",
+    "target": "spigot-1.19.4",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT",
+    "target": "paper-1.19.4",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT",
+    "target": "paper-1.20.4",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT",
+    "target": "paper-1.21.1",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT",
+    "target": "paper-1.21.11",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  },
+  {
+    "api": "io.papermc.paper:paper-api:26.3.build.244-stable",
+    "target": "paper-26.3",
+    "check": "API linkage (118 references), Java 8 class files, deferred scheduling/cancellation and anvil property availability; not a live server test",
+    "result": "passed"
+  }
+]

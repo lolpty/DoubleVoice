@@ -1,0 +1,62 @@
+# DoubleVoice: one standalone plugin, one UDP port, two voice clients.
+# Players install Simple Voice Chat OR Plasmo Voice for their Minecraft version.
+# Do not install the original server-side voicechat / PlasmoVoice plugins alongside DoubleVoice.
+# Stop the server before editing. Restart after changes; hot reload is unsupported.
+
+# auto = follow the player's Minecraft language; en / ru / es = server default.
+# Players can override it using /doublevoice language <auto|en|ru|es>.
+# Add a translation by copying lang/en.yml to another two-letter code.yml.
+language: auto
+# Used for the console, unsupported client languages and missing translations.
+fallback-language: en
+
+network:
+  # Listen on all IPv4 interfaces. Use a specific local IP only if your host requires it.
+  bind: '0.0.0.0'
+  # The ONLY local voice port (1-65535). Allocate/open it as UDP in your host and firewall.
+  # TCP Minecraft can use the same number if UDP is free. Query needs a different UDP port.
+  port: 24454
+  # Empty = Minecraft connection address. Set a publicly reachable IP/DNS behind NAT if needed.
+  # Host only: no https:// prefix and no :port suffix.
+  public-host: ''
+  # 0 = network.port. Override only if NAT maps a different external UDP port.
+  # Example: external 30000 -> local 24454: port: 24454, public-port: 30000.
+  public-port: 0
+  # Announced voice packet size, bytes (256-2048). Keep 1024 unless troubleshooting.
+  mtu: 1024
+  # Keepalive interval, milliseconds (minimum 250).
+  keepalive-ms: 1000
+  # Endpoint inactivity timeout: at least 3 * keepalive-ms, at most 120000 milliseconds.
+  timeout-ms: 15000
+  # Session cap per protocol (1-100000).
+  max-connections: 2048
+  # UDP rate limit per session (60-1000). Too low can interrupt speech.
+  packets-per-second: 120
+clients:
+  # At least one protocol must remain enabled.
+  simple: true
+  plasmo: true
+  # If both client mods are present, choose one to prevent duplicated audio: simple / plasmo.
+  preferred: simple
+voice:
+  # Blocks: 1 <= whisper <= normal <= shout <= 1024.
+  normal-distance: 32
+  whisper-distance: 8
+  shout-distance: 64
+  # Group speech can cross worlds. Proximity speech always stays in the same world.
+  groups-cross-world: true
+  # Announces SVC's built-in recording permission; cannot prevent external audio recordings.
+  allow-recording: false
+  # Opus mode: VOIP / AUDIO / RESTRICTED_LOWDELAY. VOIP is suitable for speech.
+  codec: VOIP
+  # Plasmo capture bitrate, bits/second (6000-256000). SVC has no matching protocol field.
+  bitrate: 32000
+  # Player position and permission snapshot interval, ticks (minimum 1; 20 ticks = 1 second).
+  snapshot-ticks: 2
+  # Ignore older snapshots, milliseconds (minimum 100). Keep above snapshot-ticks * 50.
+  snapshot-max-age-ms: 1500
+groups:
+  # Groups are shared by both client mods and exist until deletion or server restart.
+  max-groups: 128
+  # Minimum 2. Owners/admins can invite, remove members and delete groups.
+  max-members: 32
